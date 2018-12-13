@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col-sm-6">
+    <h3>Reservations</h3>
+    <ul class="messages">
+      <% for(var i=0; i<reservations.length; i++) {%>
+        <li class="message">
+          <div class="confirmation-card">
+            <h2 id="club_name">| Reservation <%= i+1 %> |</h2>
+              <p id="cust_name"><%= reservations[i].name %></p>
+              <p id="cust_phone"><%= reservations[i].customer.phone %></p>
+              <p id="add"><%= reservations[i].date %>
+              <p id="cust_address">Address:<%= reservations[i].customer.address %></p>
+              <p id="cust_city">City:<%= reservations[i].customer.city %></p>
+              <p id="cust_state">State:<%= reservations[i].customer.state %></p>
+              <p id="email_info"><%= reservations[i].email %></p>
+              <p id="table_floor">Floor:<%= reservations[i].table.floor %></p>
+              <p id="table_number">Table:<%= reservations[i].table.number %></p>
+              <p id="waitress_name">Waitress:<%= reservations[i].waitress.name %></p>
+              <p id="table_capacity">Capacity:<%= reservations[i].table.capacity %></p>
+              <p id="con-info"><br>There are parties and then there is Bijou!</p>
+            </div>
+            <br>
+            <span><%= reservations[i].msg %></span>
+            <!-- <span><i class="fa fa-trash" aria-hidden="true"></i></span> -->
+          </li>
+          <% } %>
+
+        </ul>
+      </div>

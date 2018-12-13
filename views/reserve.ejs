@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+<head>
+  <title>Bijou Nightclub</title>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/reservation.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+  <div class="container">
+
+    <div class="page-header text-center">
+      <!-- <h1><span class="fa fa-anchor"></span> Reserve A Table</h1> -->
+      <!-- <h1>Reserve a Table</h1> -->
+      <a href="/logout" class="but">Logout</a>
+    </div>
+
+
+
+          <div class="col-sm-6">
+
+            <h3 class="newReservation">New Reservation</h3>
+            <% if (user.local.email) { %>
+              <!-- <form action="/messages" method="POST">
+              <input type="text" placeholder="Name" name="name">
+              <input type="text" value="<%= user.local.email %>" name="email">
+              <button type="submit">Submit</button>
+            </form> -->
+            <div class="reservation">
+                <img src="../img/banner2.jpg" alt="">
+              <!-- <h3 class="reservation__title"></h3> -->
+              <form class="reservation-form" action="/messages" method="POST">
+                <div class="reservation-form__count">
+                  <input type="text" required placeholder="Name" name="name">
+                  <input type="email" required placeholder="email" value="<%= user.local.email %>" name="email">
+                  <input type="number" required placeholder="phone" value="<%= user.local.phone %>" name="phone">
+                  <input type="text" placeholder="address" value="<%= user.local.address %>" name="address">
+                  <input type="text" placeholder="city" value="<%= user.local.city %>" name="city">
+                  <input type="text" placeholder="state" value="<%= user.local.state %>" name="state">
+                  <input type="text" placeholder="zip code" value="<%= user.local.zip %>" name="zip code">
+                  <h3>Table</h3>
+                  <select value="<%= user.local.floor %>" name="floor">
+                    <option value="Goldroom">Gold Room</option>
+                    <option value="Goldroom">Onyx</option>
+                  <input type="text" placeholder="number" value="<%= user.local.number %>" name="number">
+                  <h3>Waitress</h3>
+                  <select value="<%= user.local.waitress %>" name="waitress">
+                    <option value="Brandi">Brandi</option>
+                    <option value="Nikia">Nikia</option>
+                    <option value="Ashley">Ashley</option>
+                    <option value="Courtney">Courtney</option>
+                    <option value="Brinsley">Brinsley</option>
+                    <option value="Meghan">Melissa</option>
+                    <option value="Julie">Julie</option>
+                    <option value="Amari">Amari</option>
+                  </select>
+                  <h3>Bottles</h3>
+                  <select value="<%= user.local.type %>" name="type">
+                    <option value="Tequila">Tequila</option>
+                    <option value="Vodka">Vodka</option>
+                    <option value="Gin">Gin</option>
+                    <option value="Champagne">Champagne</option>
+                    <option value="Cognac">Cognac</option>
+                    <option value="Whiskey">Whiskey</option>
+                    <option value="Magnum">Magnum</option>
+                    <option value="Nebuchadnezzar">Nebuchadnezzar</option>
+                  </select>
+                </div>
+                <br>
+                <div class="reservation-form__count">
+                  <label for="count">Table For</label><br>
+                  <button id="btn-minus" type="button">-</button>
+                  <input id="count" type="text" name="capacity" value="2">
+                  <button id="btn-plus" type="button">+</button>
+                </div>
+                <div class="reservation-form__count">
+                  <div class='input-group date' id='datetimepicker1'>
+                    <input type='text' name="date" class="form-control" id='date-input'/>
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+                  </span>
+                </div>
+              </div>
+              <button id="submit" type="submit">Confirm</button>
+            </form>
+          </div>
+        </div>
+        <% } %>
+
+      </div>
+      <script src="main.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/3.1.3/js/bootstrap-datetimepicker.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/3.1.3/js/bootstrap-datetimepicker.min.js"></script>
+      <script src="js/datePicker.js"></script>
+    </body>
+    </html>

@@ -1,4 +1,5 @@
 // config/passport.js
+//passport does 2 things start session, store information..username/password
 
 // load all the things we need
 var LocalStrategy   = require('passport-local').Strategy;
@@ -28,9 +29,9 @@ module.exports = function(passport) {
     });
 
  	// =========================================================================
-    // LOCAL SIGNUP ============================================================
+     // LOCAL SIGNUP ============================================================
     // =========================================================================
-    // we are using named strategies since we have one for login and one for signup
+   // we are using named strategies since we have one for login and one for signup
 	// by default, if there was no name, it would just be called 'local'
 
     passport.use('local-signup', new LocalStrategy({
@@ -78,7 +79,7 @@ module.exports = function(passport) {
     // =========================================================================
     // we are using named strategies since we have one for login and one for signup
     // by default, if there was no name, it would just be called 'local'
-
+    //ggget all this from website--its a template
     passport.use('local-login', new LocalStrategy({
         // by default, local strategy uses username and password, we will override with email
         usernameField : 'email',
@@ -96,7 +97,7 @@ module.exports = function(passport) {
 
             // if no user is found, return the message
             if (!user)
-                return done(null, false, req.flash('loginMessage', 'No user found.')); // req.flash is the way to set flashdata using connect-flash
+                return done(null, false, req.flash('loginMessage', 'User not found.')); // req.flash is the way to set flashdata using connect-flash
 
             // if the user is found but the password is wrong
             if (!user.validPassword(password))
